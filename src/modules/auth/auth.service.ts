@@ -39,7 +39,6 @@ const registerUserIntoDB = async (userData: any) => {
 }
 
 //* Login User
-
 const loginUserIntoDb = async (loginData: LoginInput) => {
 
     const { email, password } = loginData;
@@ -70,7 +69,7 @@ const loginUserIntoDb = async (loginData: LoginInput) => {
     //* Generate JWT token
     const accessToken = jwtUtils.createToken(jwtPayload, config.jwt_access_secret, config.jwt_access_expires_in as SignOptions);
 
-    return accessToken;
+    return { accessToken };
 }
 
 

@@ -21,8 +21,18 @@ const registerUser = catchAsync(async (req: Request, res: Response, next: NextFu
 
 //* login user
 const loginUser = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+    const payload = req.body
+    const user = await AuthService.loginUserIntoDb(payload);
 
-    const accessToken = await AuthService.loginUserIntoDb(req.body);
+    const { accessToken } = user
+
+    //* set cookie for access token
+    res.cookie("accessToken", accessToken, {
+        httpOnly: true,
+        secure: false,
+        sameSite: "none",
+        maxAge: 24 * 60 * 60 * 1000 // 24 hour or 1 day
+    })
 
     sendResponse(res, {
         success: true,

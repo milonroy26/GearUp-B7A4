@@ -3,6 +3,7 @@ import express, { Request, Response } from 'express';
 import config from './config';
 import { globalErrorHandler } from './middlewares/globalErrorHandler';
 import { authRoute } from './modules/auth/auth.route';
+import { CategoryRoutes } from './modules/category/category.route';
 
 const app = express();
 
@@ -19,7 +20,9 @@ app.get("/", (req: Request, res: Response) => {
 
 
 // routes
-app.use("/api/auth", authRoute)
+app.use("/api/auth", authRoute);
+
+app.use("/api/categories", CategoryRoutes);
 
 //* 404 Not Found
 app.use((req, res, next) => {
