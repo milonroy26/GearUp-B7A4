@@ -1,0 +1,15 @@
+model Payment {
+    id            String        @id @default(uuid())
+    transactionId String        @unique
+    amount        Float
+    method        String // Stripe or SSLCommerz
+    status        PaymentStatus @default(PENDING)
+    paidAt        DateTime?
+
+    rentalOrderId String
+    rentalOrder   RentalOrder @relation(fields: [rentalOrderId], references: [id])
+
+    createdAt DateTime @default(now())
+
+    @@map("payments")
+}
