@@ -26,7 +26,8 @@ export const auth = (...requiredRoles: UserRole[]) => {
     return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
         //* check if token exist
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlMjEwY2JkZS0wMmNlLTRkMDUtOTE3OS0wYWNkMDUzOGQwNmUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3ODMzNzEzNzMsImV4cCI6MTc4MzQ1Nzc3M30.ClZpp84uXdUVWnF_D3l2JOw3ZvGeYrngYSBmaJ2tRAs";
+        const token = req.cookies.accessToken ? req.cookies.accessToken : req.headers.authorization?.startsWith("Bearer") ? req.headers.authorization.split(" ")[1] : req.headers.authorization
+
 
         if (!token) {
             throw new AppError(httpStatus.UNAUTHORIZED, 'You are not authorized');
