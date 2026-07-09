@@ -8,6 +8,7 @@ import { CategoryRoutes } from './modules/category/category.route';
 import { GearRoutes } from "./modules/gear/gear.route";
 import { PaymentRoutes } from "./modules/payment/payment.route";
 import { RentalRoutes } from "./modules/rental/rental.route";
+import { ReviewRoutes } from "./modules/review/review.route";
 
 
 const app = express();
@@ -23,7 +24,7 @@ app.use(cookieParser());
 
 // routes
 app.get("/", (req: Request, res: Response) => {
-    res.send("Hello, World!");
+    res.send("Hello World!");
 });
 
 app.use("/api/auth", authRoute);
@@ -35,6 +36,8 @@ app.use("/api/gear", GearRoutes);
 app.use("/api/rentals", RentalRoutes);
 
 app.use("/api/payments", PaymentRoutes);
+
+app.use("/api/reviews", ReviewRoutes);
 
 //* 404 Not Found
 app.use((req, res, next) => {
