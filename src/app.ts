@@ -3,6 +3,7 @@ import cors from 'cors';
 import express, { Request, Response } from 'express';
 import config from './config';
 import { globalErrorHandler } from './middlewares/globalErrorHandler';
+import { AdminRoutes } from "./modules/admin/admin.route";
 import { authRoute } from './modules/auth/auth.route';
 import { CategoryRoutes } from './modules/category/category.route';
 import { GearRoutes } from "./modules/gear/gear.route";
@@ -38,6 +39,8 @@ app.use("/api/rentals", RentalRoutes);
 app.use("/api/payments", PaymentRoutes);
 
 app.use("/api/reviews", ReviewRoutes);
+
+app.use("/api/dashboard", AdminRoutes);
 
 //* 404 Not Found
 app.use((req, res, next) => {
