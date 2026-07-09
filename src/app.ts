@@ -6,6 +6,7 @@ import { globalErrorHandler } from './middlewares/globalErrorHandler';
 import { authRoute } from './modules/auth/auth.route';
 import { CategoryRoutes } from './modules/category/category.route';
 import { GearRoutes } from "./modules/gear/gear.route";
+import { PaymentRoutes } from "./modules/payment/payment.route";
 import { RentalRoutes } from "./modules/rental/rental.route";
 
 
@@ -32,6 +33,8 @@ app.use("/api/categories", CategoryRoutes);
 app.use("/api/gear", GearRoutes);
 
 app.use("/api/rentals", RentalRoutes);
+
+app.use("/api/payments", PaymentRoutes);
 
 //* 404 Not Found
 app.use((req, res, next) => {
