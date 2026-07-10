@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "./dist",
-        "module": "ESNext",
+        "module": "CommonJS",
         "moduleResolution": "bundler",
         "target": "ES2023",
         "types": [
