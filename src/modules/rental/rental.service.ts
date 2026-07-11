@@ -108,8 +108,28 @@ const getCustomerOrdersFromDB = async (customerId: string) => {
 }
 
 //* Return Gear Order
-const returnGearFromOrderInDB = async (orderId: string) => {
-    const result = await prisma.rentalOrder.update({
+const returnGearFromOrderInDB = async (orderId: string, userId: string) => {
+
+    const existingOrder = await prisma.rentalOrder.findFirst({
+        where: {
+            id: orderId,
+            customerId: userId
+        }
+    })
+
+    if (!existingOrder) {
+        throw new AppError(httpStatus.BAD_REQUEST, 'Order not found or not owned by user');
+    }
+
+    if (existingOrder.status === OrderStatus.RETURNED) {
+        throw new AppError(httpStatus.BAD_REQUEST, 'This gear has already been returned');
+    }
+
+    if (existingOrder.status === OrderStatus.CANCELLED) {
+        throw new AppError(httpStatus.BAD_REQUEST, 'Cannot return a cancelled order');
+    }
+
+    const updatedOrder = await prisma.rentalOrder.update({
         where: {
             id: orderId
         },
@@ -118,7 +138,7 @@ const returnGearFromOrderInDB = async (orderId: string) => {
         }
     })
 
-    return result
+    return updatedOrder
 }
 
 //* Get Provider Orders

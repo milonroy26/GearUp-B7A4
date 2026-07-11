@@ -40,6 +40,18 @@ const getCustomerOrders = catchAsync(async (req: Request, res: Response, next: N
 //* Return Gear Order
 const returnGearOrder = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
+    const orderId = req.params.id as string;
+
+    const userId = req.user!.userId as string;
+
+    const result = await RentalServices.returnGearFromOrderInDB(orderId, userId);
+
+    sendResponse(res, {
+        success: true,
+        statusCode: httpStatus.OK,
+        message: 'Gear returned successfully',
+        data: result
+    })
 })
 
 
