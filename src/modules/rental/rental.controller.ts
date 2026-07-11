@@ -37,6 +37,11 @@ const getCustomerOrders = catchAsync(async (req: Request, res: Response, next: N
 
 })
 
+//* Return Gear Order
+const returnGearOrder = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+})
+
 
 //* Get Provider Orders
 const getProviderOrders = catchAsync(async (req: Request, res: Response) => {
@@ -76,5 +81,6 @@ export const RentalControllers = {
     createRentalOrder,
     getCustomerOrders,
     getProviderOrders,
-    updateOrderStatus
+    updateOrderStatus,
+    returnGearOrder
 };

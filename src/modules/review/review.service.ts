@@ -1,4 +1,5 @@
 import httpStatus from 'http-status';
+import { OrderStatus } from '../../../generated/prisma/enums';
 import { AppError } from '../../interfaces/customError';
 import { prisma } from '../../lib/prisma';
 
@@ -9,7 +10,7 @@ const createReviewInDB = async (customerId: string, payload: { gearItemId: strin
     const hasRented = await prisma.rentalOrder.findFirst({
         where: {
             customerId,
-            status: "PAID", //or RETURNED 
+            status: OrderStatus.RETURNED, //or OrderStatus.PAID 
             orderItems: {
                 some: { gearItemId: payload.gearItemId }
             }

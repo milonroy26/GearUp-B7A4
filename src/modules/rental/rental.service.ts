@@ -107,6 +107,20 @@ const getCustomerOrdersFromDB = async (customerId: string) => {
 
 }
 
+//* Return Gear Order
+const returnGearFromOrderInDB = async (orderId: string) => {
+    const result = await prisma.rentalOrder.update({
+        where: {
+            id: orderId
+        },
+        data: {
+            status: OrderStatus.RETURNED
+        }
+    })
+
+    return result
+}
+
 //* Get Provider Orders
 const getProviderOrdersFromDB = async (providerId: string) => {
     //The provider will only see orders that have gear in its own inventory.
@@ -160,5 +174,6 @@ export const RentalServices = {
     createRentalOrderInDB,
     getCustomerOrdersFromDB,
     getProviderOrdersFromDB,
-    updateOrderStatusInDB
+    updateOrderStatusInDB,
+    returnGearFromOrderInDB
 };

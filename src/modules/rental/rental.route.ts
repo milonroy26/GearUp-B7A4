@@ -12,6 +12,8 @@ router.post('/', auth(UserRole.CUSTOMER), validateRequest(createRentalOrderSchem
 
 router.get('/', auth(UserRole.CUSTOMER), RentalControllers.getCustomerOrders);
 
+router.patch('/:id/return', auth(UserRole.CUSTOMER), RentalControllers.returnGearOrder);
+
 //* Provider Endpoints
 router.get('/provider/orders', auth(UserRole.PROVIDER), RentalControllers.getProviderOrders);
 
