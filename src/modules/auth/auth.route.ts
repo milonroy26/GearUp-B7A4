@@ -9,4 +9,6 @@ router.post('/register', validateRequest(registerSchema), AuthController.registe
 
 router.post('/login', validateRequest(loginSchema), AuthController.loginUser);
 
+router.get('/me', AuthController.getMyProfile);
+
 export const authRoute = router;

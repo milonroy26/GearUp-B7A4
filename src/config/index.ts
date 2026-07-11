@@ -20,5 +20,4 @@ export default {
 
     ssl_commerz_store_id: process.env.SSL_COMMERZ_STORE_ID!,
     ssl_commerz_store_password: process.env.SSL_COMMERZ_STORE_PASSWORD!,
-    ssl_is_live: process.env.IS_LIVE
 }
