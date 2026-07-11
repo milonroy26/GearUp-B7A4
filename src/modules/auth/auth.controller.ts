@@ -49,7 +49,11 @@ const loginUser = catchAsync(async (req: Request, res: Response, next: NextFunct
 //* Profile
 const getMyProfile = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
 
-    const userId = req.user?.userId
+    const userId = req.user!.userId
+
+    if (!userId) {
+        throw new Error('User not found')
+    }
 
     const result = await AuthService.getMyProfileFromDB(userId as string);
     sendResponse(res, {

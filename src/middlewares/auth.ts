@@ -12,7 +12,7 @@ interface JwtPayload {
     role: 'CUSTOMER' | 'PROVIDER' | 'ADMIN';
 }
 
-// Express Request ইন্টারফেস এক্সটেন্ড করা (userId এবং role যুক্ত করার জন্য)
+// Express Request interface extend (userId and role added to the request)
 declare global {
     namespace Express {
         interface Request {
