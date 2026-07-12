@@ -44,7 +44,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"email\": \"milon@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+              "raw": "{\r\n    \"email\": \"provider@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -64,6 +64,25 @@
             }
           },
           "response": []
+        },
+        {
+          "name": "my-profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/auth/me",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -77,7 +96,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"name\": \"GYM\"\r\n}",
+              "raw": "{\r\n    \"name\": \"Bowflex\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -128,7 +147,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"title\": \"Kettler Indoor Exercise Bike\",\r\n    \"description\": \"Indoor stationary exercise bike with adjustable resistance and digital performance monitoring.\",\r\n    \"brand\": \"Kettler\",\r\n    \"pricePerDay\": 1500,\r\n    \"stock\": 8,\r\n    \"categoryId\": \"0950a6e4-c005-4bc0-a760-973921d9d9d4\"\r\n}",
+              "raw": "{\r\n    \"title\": \"Yonex Professional Badminton Set\",\r\n    \"description\": \"Professional badminton set with two rackets, shuttlecocks, and a carrying case for competitive play.\",\r\n    \"brand\": \"Yonex\",\r\n    \"pricePerDay\": 1500,\r\n    \"stock\": 8,\r\n    \"categoryId\": \"918b93f6-b10b-45a4-bc25-4fd35c048b92\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -221,14 +240,14 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{BASE_URL}}/api/gear/c0834f15-7f3c-49f5-9c3d-dd33a8d6a825",
+              "raw": "{{BASE_URL}}/api/gear/05cfe3ec-1178-4ace-ad0c-ab783a35fdd9",
               "host": [
                 "{{BASE_URL}}"
               ],
               "path": [
                 "api",
                 "gear",
-                "c0834f15-7f3c-49f5-9c3d-dd33a8d6a825"
+                "05cfe3ec-1178-4ace-ad0c-ab783a35fdd9"
               ]
             }
           },
@@ -241,7 +260,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"title\": \"Schwinn Road Bicycle\",\r\n    \"description\": \"Comfortable road bicycle with smooth gear shifting, ideal for city rides and long-distance cycling.\",\r\n    \"brand\": \"Schwinn\",\r\n    \"pricePerDay\": 1000,\r\n    \"stock\": 6,\r\n    \"isAvailable\": true\r\n}",
+              "raw": "{\r\n    \"title\": \"Schwinn Road Bicycle\",\r\n    \"description\": \"Comfortable road bicycle with smooth gear shifting, ideal for city rides and long-distance cycling.\",\r\n    \"brand\": \"Schwinn\",\r\n    \"pricePerDay\": 1000,\r\n    \"stock\": 10,\r\n    \"isAvailable\": true\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -249,7 +268,7 @@
               }
             },
             "url": {
-              "raw": "{{BASE_URL}}/api/gear/provider/gear/a513571f-f40e-40bb-b5fa-c42a05b3e770",
+              "raw": "{{BASE_URL}}/api/gear/provider/gear/05cfe3ec-1178-4ace-ad0c-ab783a35fdd9",
               "host": [
                 "{{BASE_URL}}"
               ],
@@ -258,7 +277,7 @@
                 "gear",
                 "provider",
                 "gear",
-                "a513571f-f40e-40bb-b5fa-c42a05b3e770"
+                "05cfe3ec-1178-4ace-ad0c-ab783a35fdd9"
               ]
             }
           },
@@ -297,7 +316,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "    {\r\n    \"startDate\": \"2026-08-25T00:00:00.000Z\",\r\n    \"endDate\": \"2026-09-27T00:00:00.000Z\",\r\n    \"items\": [\r\n        {\r\n        \"gearItemId\": \"a513571f-f40e-40bb-b5fa-c42a05b3e770\",\r\n        \"quantity\": 2\r\n        }\r\n    ]\r\n    }",
+              "raw": "    {\r\n    \"startDate\": \"2026-08-25T00:00:00.000Z\",\r\n    \"endDate\": \"2026-09-27T00:00:00.000Z\",\r\n    \"items\": [\r\n        {\r\n        \"gearItemId\": \"05cfe3ec-1178-4ace-ad0c-ab783a35fdd9\",\r\n        \"quantity\": 2\r\n        }\r\n    ]\r\n    }",
               "options": {
                 "raw": {
                   "language": "json"
@@ -312,53 +331,6 @@
               "path": [
                 "api",
                 "rentals"
-              ],
-              "query": [
-                {
-                  "key": "category",
-                  "value": "9db0c549-0790-4766-90ba-083bffbf9c91",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "brand",
-                  "value": "This is a test brand 2",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "minPrice",
-                  "value": "150",
-                  "disabled": true
-                },
-                {
-                  "key": "maxPrice",
-                  "value": "100",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "title",
-                  "value": "title 1",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "description",
-                  "value": "test description",
-                  "disabled": true
-                },
-                {
-                  "key": "sortBy",
-                  "value": "createdAt",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "sortOrder",
-                  "value": "asc",
-                  "disabled": true
-                }
               ]
             }
           },
@@ -384,9 +356,21 @@
         },
         {
           "name": "provider-orders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "GET",
             "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
             "url": {
               "raw": "{{BASE_URL}}/api/rentals/provider/orders",
               "host": [
@@ -417,7 +401,7 @@
               }
             },
             "url": {
-              "raw": "{{BASE_URL}}/api/rentals/provider/orders/69cb1bfd-cc05-4669-92e5-4b6a67debb97",
+              "raw": "{{BASE_URL}}/api/rentals/provider/orders/333ba277-87f7-4d32-9cf0-921319ca8471",
               "host": [
                 "{{BASE_URL}}"
               ],
@@ -426,7 +410,27 @@
                 "rentals",
                 "provider",
                 "orders",
-                "69cb1bfd-cc05-4669-92e5-4b6a67debb97"
+                "333ba277-87f7-4d32-9cf0-921319ca8471"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "return-gear-order",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/rentals/5e671807-83f5-4779-a70b-8317b5eeb646/return",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "rentals",
+                "5e671807-83f5-4779-a70b-8317b5eeb646",
+                "return"
               ]
             }
           },
@@ -444,7 +448,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"rentalOrderId\": \"69cb1bfd-cc05-4669-92e5-4b6a67debb97\"\r\n}",
+              "raw": "{\r\n    \"rentalOrderId\": \"5e671807-83f5-4779-a70b-8317b5eeb646\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -460,53 +464,6 @@
                 "api",
                 "payments",
                 "initiate"
-              ],
-              "query": [
-                {
-                  "key": "category",
-                  "value": "9db0c549-0790-4766-90ba-083bffbf9c91",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "brand",
-                  "value": "This is a test brand 2",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "minPrice",
-                  "value": "150",
-                  "disabled": true
-                },
-                {
-                  "key": "maxPrice",
-                  "value": "100",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "title",
-                  "value": "title 1",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "description",
-                  "value": "test description",
-                  "disabled": true
-                },
-                {
-                  "key": "sortBy",
-                  "value": "createdAt",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "sortOrder",
-                  "value": "asc",
-                  "disabled": true
-                }
               ]
             }
           },
@@ -524,7 +481,7 @@
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n    \"gearItemId\": \"c0834f15-7f3c-49f5-9c3d-dd33a8d6a825\",\r\n    \"rating\": \"4\",\r\n    \"comment\": \"Good Services\"\r\n}",
+              "raw": "{\r\n    \"gearItemId\": \"05cfe3ec-1178-4ace-ad0c-ab783a35fdd9\",\r\n    \"rating\": \"4\",\r\n    \"comment\": \"Good Services\"\r\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -539,53 +496,6 @@
               "path": [
                 "api",
                 "reviews"
-              ],
-              "query": [
-                {
-                  "key": "category",
-                  "value": "9db0c549-0790-4766-90ba-083bffbf9c91",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "brand",
-                  "value": "This is a test brand 2",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "minPrice",
-                  "value": "150",
-                  "disabled": true
-                },
-                {
-                  "key": "maxPrice",
-                  "value": "100",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "title",
-                  "value": "title 1",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "description",
-                  "value": "test description",
-                  "disabled": true
-                },
-                {
-                  "key": "sortBy",
-                  "value": "createdAt",
-                  "type": "text",
-                  "disabled": true
-                },
-                {
-                  "key": "sortOrder",
-                  "value": "asc",
-                  "disabled": true
-                }
               ]
             }
           },
@@ -664,6 +574,10 @@
   "variable": [
     {
       "key": "BASE_URL",
+      "value": ""
+    },
+    {
+      "key": "LOCAL_URL",
       "value": ""
     }
   ]
